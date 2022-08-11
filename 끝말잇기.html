@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기 연습</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>끝말잇기 연습</h1>
+      <div><span class="user">1</span>번째 참가자</div>
+      <div>제시어: <span class="word"></span></div>
+      <input type="text" />
+      <button>입력</button>
+    </div>
+    <script>
+      let userNum = parseInt(prompt('참가할 사용자 수는 몇명인가요?'));
+      if (userNum <= 0) {
+        userNum = parseInt(prompt('참가할 사용자 수는 1명 이상이어야 합니다'));
+      }
+      const firstUser = 1;
+      const $input = document.querySelector('input');
+      const $button = document.querySelector('button');
+      const $user = document.querySelector('.user');
+      const $word = document.querySelector('.word');
+      let word = $word.textContent;
+      let inputValue;
+      const insertWord = () => {
+        word = inputValue;
+        $word.textContent = word;
+        $input.value = '';
+      };
+
+      $input.addEventListener('input', (e) => {
+        inputValue = e.target.value;
+        console.log(inputValue);
+      });
+      $button.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!word) {
+          insertWord();
+        } else {
+        }
+      });
+    </script>
+  </body>
+</html>
